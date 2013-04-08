@@ -1,4 +1,9 @@
-var key = {
+var p1key;
+var p1val;
+var p2key;
+var p2val;
+
+var gameKeys = {
     '0': 48,
     '1': 49,
     '2': 50,
@@ -61,17 +66,45 @@ function randomKey(obj) {
     return ret;
 }
 
+function newKeys(player) {
+  if (player === 1) {
+    p1key = randomKey(gameKeys);
+    p1val = gameKeys[p1key];
+  $('.keys#player1_key').text(p1key)
+  }
+  if (player === 2) {
+    p2key = randomKey(gameKeys);
+    p2val = gameKeys[p2key];
+  $('.keys#player2_key').text(p2key)
+  }
+}
+
 
 $(document).ready(function() {
-  $(document).on('keyup', function(event){
-    // console.log(event.keyCode);
-    console.log(randomKey(key));
+  
 
+    newKeys(1);
+    newKeys(2);
+      
+  $(document).on('keyup', function(event){
+    var keyPress = event.keyCode
 
     var cat1pos = parseInt($('#cat1').css('left'));
-    // console.log(cat1pos);
+    var cat2pos = parseInt($('#cat2').css('left'));
+    
 
-    $('#cat1').css( {left: (cat1pos += 3)});
+    if (keyPress === p1val) {
+      $('#cat1').css( {left: (cat1pos += 10)});
+      newKeys(1);
+    };
+    
+
+    if (keyPress === p2val) {
+      $('#cat2').css( {left: (cat2pos += 10)});
+      newKeys(2);
+    };    
+
+    
     // console.log(carynt1pos);
   });
 

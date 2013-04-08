@@ -15,7 +15,26 @@ body {
   left:30px;
 }
 
+.keybox {
+  position:absolute;
+  top:100px;
+  left:100px;
+  width:200px;
+  height:200px;
+  background: rgba(233, 213, 153, 1);
+  border-radius: 100px;
+  box-shadow: 7px 20px rgba(255,255,255,.5);
+}
 
+.keys {
+  position: relative;
+  top: 10px;
+  text-align: center;
+  width:120px;
+  color:#bad;
+  background:#a55;
+  margin:20px auto;
+}
 
 
 
