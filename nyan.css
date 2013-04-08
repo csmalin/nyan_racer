@@ -1,0 +1,29 @@
+body {
+  /*background: url("http://aislian.org/tiling.gif");*/
+  background: url("http://www.rosiehardman.com/bgimages/rosieanimback5.gif");
+}
+
+#cat1{
+  position:absolute;
+  top:30px;
+  left:30px;
+}
+
+#cat2{
+  position:absolute;
+  top:80px;
+  left:30px;
+}
+
+
+
+
+
+
+
+/*        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";*/
