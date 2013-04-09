@@ -109,7 +109,7 @@ $(document).ready(function() {
     
 
     if (keyPress === p1val) {
-      $('#cat1').css( {left: (cat1pos += 30)});
+      $('#cat1').css( {left: (cat1pos += 90)});
       newKeys(1);
       
       if (cat1pos > 700) {

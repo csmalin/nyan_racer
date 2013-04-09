@@ -52,7 +52,7 @@ body {
 .finishline {
   position:absolute;
   top:0;
-  left:800px;
+  left:770px;
   height:34%;
   background: url('img/finishline.png');
   background-size: cover;
