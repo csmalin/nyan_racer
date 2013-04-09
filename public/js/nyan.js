@@ -69,6 +69,7 @@ var catSources = ['/img/nyan.gif',
                   '/img/tacnayn.gif',
                   '/img/tacodog.gif',
                   '/img/zombie.gif',
+                  '/img/pirate.gif',
                   '/img/uhmurica.gif'];
 
 
@@ -145,15 +146,13 @@ $(document).ready(function() {
       if (p1char === max) { p1char = 0; }
       else { p1char += 1; }
       $('#cat1').attr('src',catSources[p1char]);
-      console.log(p1char);
     } 
     if ($(this)[0].id === 'cat2') {
       if (p2char === max) { p2char = 0 }
       else { p2char += 1;}
       $('#cat2').attr('src',catSources[p2char]);
-      console.log(p2char);
     }
-    // $(this).attr('src',)
+  
 
   });
 
