@@ -1,12 +1,15 @@
+<%= erb(:players) %>
+
+
 <div id="nyanwrapper">
   <img src="img/nyan.gif" id="cat1" class="nyancat">
   <img src="img/nyaninja.gif" id="cat2" class="nyancat">
   <div class="keybox_p1">
-    <p class="keys">Player 1</p>
+    <p class="keys" id="player1_name"></p>
     <p class="keys" id="player1_key">X</p>
   </div>
   <div class="keybox_p2">
-    <p class="keys">Player 2</p>
+    <p class="keys" id="player2_name"></p>
     <p class="keys" id="player2_key">Y</p>
   </div>
 </div>

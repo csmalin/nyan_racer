@@ -17,6 +17,7 @@ body {
 }
 
 .keybox_p1, .keybox_p2 {
+
   position:absolute;
   width:200px;
   height:200px;
@@ -37,16 +38,18 @@ body {
 }
 
 .keys {
+  border-radius: 4px;
+  visibility: hidden;
   position: relative;
   top: 40px;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   width:160px;
   height: 30px;
   color: white;
   background: rgba(0,0,0,.5);
   margin:20px auto;
-  padding:7px 5px 0 5px;
+  padding:8px 5px 0 5px;
 }
 
 .finishline {
@@ -58,3 +61,21 @@ body {
   background-size: cover;
 
 }
+
+#players {
+  border-radius: 5px;
+  border: solid 2px black;
+  padding: 10px;
+  background-color: rgba(0,0,0, .9);
+  text-align: center;
+  color: white;
+}
+
+#players .element {
+  margin: 10px;
+}
+
+.ui-dialog-titlebar-close {
+  visibility: hidden;
+}
+

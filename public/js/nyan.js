@@ -73,8 +73,6 @@ var catSources = ['/img/nyan.gif',
                   '/img/uhmurica.gif'];
 
 
-
-
 function randomKey(obj) {
     var ret;
     var c = 0;
@@ -92,17 +90,52 @@ function newKeys(player) {
   }
   if (player === 2) {
     p2key = randomKey(gameKeys);
-    p2val = gameKeys[p2key];
-  $('.keys#player2_key').text(p2key)
+    p2val = gameKs[p2key];
+  $('.keys#player2_key').text(p2key) 
   }
 }
+
+
+ function ajaxify_the_results(stuff){
+    $.ajax({
+      url: "/gameover",
+      type: 'POST',
+      data: stuff
+    })
+    .done(function (data) {
+      window.location = '/'; 
+    })
+  };
+
+
+
 
 
 $(document).ready(function() {
     newKeys(1);
     newKeys(2);
-      
-  $(document).on('keyup', function(event){
+
+
+  $('#players').dialog({
+    bgiframe: true,
+    autoOpen: true,
+    closeOnEscape: false,
+    modal: true,
+    width: "400px",
+    position: [250,50]  
+  });
+
+  $(".players_form").submit(function(event) {
+    event.preventDefault();
+    $("#player1_name").text($("#dialog_player1").val());    
+    $("#player2_name").text($("#dialog_player2").val());
+    $(".keys").css({visibility: 'visible'})
+    $('#players').dialog('close');
+});
+
+
+
+   $(document).on('keyup', function(event){
     var keyPress = event.keyCode
 
     var cat1pos = parseInt($('#cat1').css('left'));
@@ -117,6 +150,8 @@ $(document).ready(function() {
       $('#cat1').attr('src','/img/technyancolor.gif');
       $('.keybox_p2').effect("explode", 1000);
       $('.keys#player1_key').text('has won!');
+      var results = {player1: $("#player1_name").text(), player2:  $("#player2_name").text(),winner: 1};
+      ajaxify_the_results(results);
       };
 
     };
@@ -130,6 +165,8 @@ $(document).ready(function() {
       $('#cat2').attr('src','/img/technyancolor.gif');
       $('.keybox_p1').effect("explode", 1000);
       $('.keys#player2_key').text('has won!');
+      var results = {player1: $("#player1_name").text(), player2:  $("#player2_name").text(),winner: 2};
+      ajaxify_the_results(results);
       };
     };    
 
@@ -161,4 +198,10 @@ $(document).ready(function() {
 
 
 
+//########################################
+ // $.ajax ({
+ //        url: window.location.pathname,
+ //        method: "post",
+ //        data: {_method: "put", winner_id: parseInt($('p :last').text())}
+ //      })
 
