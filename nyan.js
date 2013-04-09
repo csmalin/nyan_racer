@@ -40,22 +40,39 @@ var gameKeys = {
     'x': 88,
     'y': 89,
     'z': 90,
-    'Equals': 187,
-    'Comma': 188,
-    'Slash': 191,
-    'Backslash': 220,
-    'OpenBracket': 219,
-    'CloseBracket': 221,
-    'Minus': 189,
-    'BackTick': 192,
-    'Apostrophe': 222,
-    'Semicolon': 186,
-    '17 minus 9': 56,
+    '=': 187,
+    ',': 188,
+    '/': 191,
+    '\\': 220,
+    '[': 219,
+    ']': 221,
+    '-': 189,
+    '`': 192,
+    '\'': 222,
+    ';': 186,
+    '17-9': 56,
     'SQRT(81)': 57,
-    '8 % 3': 50
-
-
+    '8 % 3': 50,
+    'pi.floor' : 51,
+    '2**3': 56,
+    '2 += 3': 53,
+    '891/891': 49
 }
+
+var catSources = ['img/nyan.gif',
+                  'img/nyaninja.gif',
+                  'img/pikanyan.gif',
+                  'img/pumpkin.gif',
+                  'img/rasta.gif',
+                  'img/retro.gif',
+                  'img/starsheep.gif',
+                  'img/tacnayn.gif',
+                  'img/tacodog.gif',
+                  'img/zombie.gif',
+                  'img/uhmurica.gif'];
+
+
+
 
 function randomKey(obj) {
     var ret;
@@ -81,8 +98,6 @@ function newKeys(player) {
 
 
 $(document).ready(function() {
-  
-
     newKeys(1);
     newKeys(2);
       
@@ -94,18 +109,50 @@ $(document).ready(function() {
     
 
     if (keyPress === p1val) {
-      $('#cat1').css( {left: (cat1pos += 10)});
+      $('#cat1').css( {left: (cat1pos += 21)});
       newKeys(1);
+      
+      if (cat1pos > 700) {
+      $('#cat1').attr('src','img/technyancolor.gif');
+      alert('Player 1 has won!');
+      };
+
     };
     
 
     if (keyPress === p2val) {
-      $('#cat2').css( {left: (cat2pos += 10)});
+      $('#cat2').css( {left: (cat2pos += 20)});
       newKeys(2);
+
+      if (cat2pos > 700) {
+      $('#cat2').attr('src','img/technyancolor.gif');
+      alert('Player 2 has won!');
+      };
     };    
 
     
     // console.log(carynt1pos);
+  });
+
+  var p1char = 0;
+  var p2char = 1;
+  var max = catSources.length;
+  $('.nyancat').on('click', function(event){
+
+    if ($(this)[0].id === 'cat1') {
+      if (p1char === max) { p1char = 0; }
+      else { p1char += 1; }
+      $('#cat1').attr('src',catSources[p1char]);
+      console.log(p1char);
+    } 
+    if ($(this)[0].id === 'cat2') {
+      if (p2char === max) { p2char = 0 }
+      else { p2char += 1;}
+      $('#cat2').attr('src',catSources[p2char]);
+      console.log(p2char);
+    }
+    // $(this).attr('src',)
+
   });
 
 

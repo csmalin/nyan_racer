@@ -1,6 +1,6 @@
 body {
   /*background: url("http://aislian.org/tiling.gif");*/
-  background: url("http://www.rosiehardman.com/bgimages/rosieanimback5.gif");
+  background: url("img/rosieanimback5.gif");
 }
 
 #cat1{
@@ -15,25 +15,47 @@ body {
   left:30px;
 }
 
-.keybox {
+.keybox_p1, .keybox_p2 {
   position:absolute;
-  top:100px;
-  left:100px;
   width:200px;
   height:200px;
-  background: rgba(233, 213, 153, 1);
-  border-radius: 100px;
-  box-shadow: 7px 20px rgba(255,255,255,.5);
+}
+
+.keybox_p1{
+  top:100px;
+  background: url('img/moon.png');
+  background-size: cover;
+  left:200px;
+}
+
+.keybox_p2{
+  top:200px;
+  background: url('img/mars123.png');
+  background-size: cover;
+  left:510px;
 }
 
 .keys {
   position: relative;
-  top: 10px;
+  top: 40px;
+  font-size: 25px;
   text-align: center;
   width:120px;
-  color:#bad;
-  background:#a55;
+  height: 30px;
+  color: white;
+  background: rgba(0,0,0,.5);
   margin:20px auto;
+}
+
+.finishline {
+  position:absolute;
+  height:200px;
+  width:15px;
+  left:800px;
+  background: url('img/rainbow.jpg');
+  opacity:.6;
+  box-shadow: 1px 0 black;
+
 }
 
 
