@@ -1,6 +1,7 @@
 body {
   /*background: url("http://aislian.org/tiling.gif");*/
   background: url("img/rosieanimback5.gif");
+  font-family: 'Press Start 2P', cursive;
 }
 
 #cat1{
@@ -38,23 +39,23 @@ body {
 .keys {
   position: relative;
   top: 40px;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
-  width:120px;
+  width:160px;
   height: 30px;
   color: white;
   background: rgba(0,0,0,.5);
   margin:20px auto;
+  padding:7px 5px 0 5px;
 }
 
 .finishline {
   position:absolute;
-  height:200px;
-  width:15px;
+  top:0;
   left:800px;
-  background: url('img/rainbow.jpg');
-  opacity:.6;
-  box-shadow: 1px 0 black;
+  height:34%;
+  background: url('img/finishline.png');
+  background-size: cover;
 
 }
 

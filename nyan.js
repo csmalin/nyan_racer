@@ -109,24 +109,26 @@ $(document).ready(function() {
     
 
     if (keyPress === p1val) {
-      $('#cat1').css( {left: (cat1pos += 21)});
+      $('#cat1').css( {left: (cat1pos += 30)});
       newKeys(1);
       
       if (cat1pos > 700) {
       $('#cat1').attr('src','img/technyancolor.gif');
-      alert('Player 1 has won!');
+      $('.keybox_p2').effect("explode", 1000);
+      $('.keys#player1_key').text('has won!');
       };
 
     };
     
 
     if (keyPress === p2val) {
-      $('#cat2').css( {left: (cat2pos += 20)});
+      $('#cat2').css( {left: (cat2pos += 30)});
       newKeys(2);
 
       if (cat2pos > 700) {
       $('#cat2').attr('src','img/technyancolor.gif');
-      alert('Player 2 has won!');
+      $('.keybox_p1').effect("explode", 1000);
+      $('.keys#player2_key').text('has won!');
       };
     };    
 
