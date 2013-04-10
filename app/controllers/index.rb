@@ -6,9 +6,7 @@ end
 post '/gameover' do
   player1 = Player.find_or_create_by_name(params[:player1])
   player2 = Player.find_or_create_by_name(params[:player2])
-
-  winner = Player.find((params[:winner] == "1" ? player1.id : player2.id))
-  
+  winner = Player.find_by_name(params[:winner])
   game = Game.create(:winner => winner, :players => [player1, player2])
 end
 

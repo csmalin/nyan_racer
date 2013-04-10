@@ -5,14 +5,16 @@ body {
 }
 
 #cat1{
+  height: 75px;
   position:absolute;
   top:30px;
   left:30px;
 }
 
 #cat2{
+  height: 75px;
   position:absolute;
-  top:80px;
+  top:120px;
   left:30px;
 }
 
